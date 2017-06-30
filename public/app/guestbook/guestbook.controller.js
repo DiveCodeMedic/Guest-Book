@@ -2,12 +2,12 @@
     'use strict';
 
     angular
-        .module('app', [])
+        .module('app')
         .controller('GuestbookController', GuestbookController);
 
-    GuestbookController.$inject = ['guestbookFactory'];
+    GuestbookController.$inject = ['$http'];
 
-    function GuestbookController(guestbookFactory) {
+    function GuestbookController($http) {
         var vm = this;
 
         vm.addMessage = addMessage;
@@ -15,7 +15,7 @@
         ///////////////
         function addMessage() {
             $http
-                .post('http://localhost:3012/message', {
+                .post('http://localhost:3000/message', {
         "message": vm.newMessage
     })
     .then(response => {

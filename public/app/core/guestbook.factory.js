@@ -2,20 +2,21 @@
     'use strict';
 
     angular
-        .module('module')
+        .module('app')
         .factory('guestbookFactory', guestbookFactory)
+
 
     guestbookFactory.$inject = ['$http'];
 
     function guestbookFactory($http) {
         var service = {
-            getMessages: getMessages,
-            postMessage: postMessage
+            getMessage:getMessage,
+            postMessage:postMessage
         };
 
         return service;
 
-        function getMessages() { }
+        function getMessage() { }
 
         function postMessage() { }
     }
